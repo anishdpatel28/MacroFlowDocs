@@ -67,7 +67,7 @@ grip README.md 8000
 
 Open: http://localhost:8000
 
-## 📁 Documentation Structure
+## Documentation Structure
 
 ```
 MacroFlowDocs/
@@ -82,7 +82,7 @@ MacroFlowDocs/
 └── REPOSITORY_SETUP.md # Setup guide
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Change Theme
 
@@ -127,7 +127,7 @@ Your docs are already configured for GitHub Pages!
 3. Select source: `main` branch, `/` (root)
 4. Your docs will be live at: `https://anishdpatel28.github.io/MacroFlowDocs/`
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Port already in use
 

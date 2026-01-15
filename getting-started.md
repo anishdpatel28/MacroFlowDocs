@@ -8,7 +8,7 @@ This guide will help you get up and running with MacroFlow in minutes.
 
 ```bash
 # Add the tap
-brew tap anish/macroflow
+brew tap <user>/macroflow
 
 # Install MacroFlow
 brew install macroflow
@@ -20,7 +20,7 @@ If you prefer to build from source:
 
 ```bash
 # Clone the CLI repository
-git clone https://github.com/anish/MacroFlowCLI.git
+git clone https://github.com/<user>/MacroFlowCLI.git
 cd MacroFlowCLI
 
 # Build the binary
@@ -283,7 +283,7 @@ macro import --file macros.json --merge
 
 Now that you understand the basics:
 
-1. **Read the full [CLI README](https://github.com/anish/MacroFlowCLI)** for detailed command reference
+1. **Read the full [CLI README](https://github.com/<user>/MacroFlowCLI)** for detailed command reference
 2. **Create macros for your daily workflows** - think about repetitive commands you run
 3. **Explore parameter substitution** for more dynamic macros
 4. **Export your macros** as a backup
@@ -292,6 +292,6 @@ Now that you understand the basics:
 
 - Run `macro --help` to see all available commands
 - Run `macro <command> --help` for help on a specific command
-- Check the [CLI README](https://github.com/anish/MacroFlowCLI) for detailed documentation
+- Check the [CLI README](https://github.com/<user>/MacroFlowCLI) for detailed documentation
 
 Happy macro-ing!

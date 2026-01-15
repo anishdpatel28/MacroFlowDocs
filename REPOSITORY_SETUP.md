@@ -21,7 +21,7 @@ MacroFlow consists of three separate repositories:
 ### 2. Initialize Git and Push
 
 ```bash
-cd /Users/anish/Documents/GitHub/MacroFlow/MacroFlowDocs
+cd /Users/<user>/Documents/GitHub/MacroFlow/MacroFlowDocs
 
 # Initialize git
 git init
@@ -32,8 +32,8 @@ git add .
 # Make initial commit
 git commit -m "Initial commit: MacroFlow Documentation"
 
-# Add remote (replace 'anish' with your GitHub username)
-git remote add origin https://github.com/anish/MacroFlowDocs.git
+# Add remote (replace '<user>' with your GitHub username)
+git remote add origin https://github.com/<user>/MacroFlowDocs.git
 
 # Push to GitHub
 git branch -M main
@@ -57,7 +57,7 @@ Contributions are welcome! To contribute:
 
 ## Related Repositories
 
-- [MacroFlowCLI](https://github.com/anish/MacroFlowCLI) - CLI application
+- [MacroFlowCLI](https://github.com/<user>/MacroFlowCLI) - CLI application
 - MacroFlowGUI (Coming soon) - GUI application
 
 ## License

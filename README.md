@@ -9,7 +9,7 @@ Official documentation for MacroFlow - a powerful CLI tool for directory-scoped 
 
 ## Related Repositories
 
-- **[MacroFlowCLI](https://github.com/anish/MacroFlowCLI)** - The CLI application
+- **[MacroFlowCLI](https://github.com/<user>/MacroFlowCLI)** - The CLI application
 - **MacroFlowGUI** (Coming soon) - GUI application
 
 ## What is MacroFlow?
@@ -51,9 +51,9 @@ MIT License - See LICENSE file in the MacroFlowCLI repository.
 
 ## Links
 
-- **CLI Repository**: [MacroFlowCLI](https://github.com/anish/MacroFlowCLI)
+- **CLI Repository**: [MacroFlowCLI](https://github.com/<user>/MacroFlowCLI)
 - **Documentation**: You're here!
-- **Issues**: Report issues in the [CLI repository](https://github.com/anish/MacroFlowCLI/issues)
+- **Issues**: Report issues in the [CLI repository](https://github.com/<user>/MacroFlowCLI/issues)
 
 ---
 
