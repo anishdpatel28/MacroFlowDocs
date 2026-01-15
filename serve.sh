@@ -1,9 +1,9 @@
 #!/bin/bash
 # Simple script to serve MacroFlow documentation locally
 
-echo "🚀 Starting MacroFlow Documentation Server..."
+echo "Starting MacroFlow Documentation Server..."
 echo ""
-echo "📖 Documentation will be available at:"
+echo "Documentation will be available at:"
 echo "   http://localhost:3000"
 echo ""
 echo "Press Ctrl+C to stop the server"
