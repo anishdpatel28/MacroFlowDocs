@@ -294,4 +294,4 @@ Now that you understand the basics:
 - Run `macro <command> --help` for help on a specific command
 - Check the [CLI README](https://github.com/anish/MacroFlowCLI) for detailed documentation
 
-Happy macro-ing! 🚀
+Happy macro-ing!
