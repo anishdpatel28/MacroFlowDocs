@@ -26,8 +26,8 @@ macro add start "npm start"
 
 # Package management
 macro add install "npm install"
-macro add add "npm install $@"
-macro add remove "npm uninstall $@"
+macro add add "npm install \$@"
+macro add remove "npm uninstall \$@"
 macro add clean "rm -rf node_modules package-lock.json && npm install"
 
 # Linting and formatting
@@ -43,7 +43,7 @@ macro add prod "npm run build && npm run start:prod"
 
 ```bash
 # Component creation (with parameters)
-macro add component "mkdir -p src/components/$1 && touch src/components/$1/$1.tsx src/components/$1/$1.module.css"
+macro add component "mkdir -p src/components/\$1 && touch src/components/\$1/\$1.tsx src/components/\$1/\$1.module.css"
 
 # Testing
 macro add test:watch "npm test -- --watch"
@@ -61,7 +61,7 @@ macro add dev "next dev"
 macro add build "next build"
 macro add start "next start"
 macro add analyze "ANALYZE=true next build"
-macro add page "touch pages/$1.tsx"
+macro add page "touch pages/\$1.tsx"
 ```
 
 ## Git Workflows
@@ -75,8 +75,8 @@ macro add log "git log --oneline --graph --decorate -n 10"
 macro add diff "git diff"
 
 # Committing
-macro add add "git add $@"
-macro add c "git commit -m \"$@\""
+macro add add "git add \$@"
+macro add c "git commit -m \"\$@\""
 macro add amend "git commit --amend --no-edit"
 
 # Push/Pull
@@ -89,22 +89,22 @@ macro add sync "git pull --rebase"
 
 ```bash
 # Feature branch workflow
-macro add feature "git checkout -b feature/$1"
-macro add finish "git checkout main && git pull && git merge --no-ff $1"
+macro add feature "git checkout -b feature/\$1"
+macro add finish "git checkout main && git pull && git merge --no-ff \$1"
 
 # Quick save and push
-macro add save "git add . && git commit -m \"$@\" && git push"
+macro add save "git add . && git commit -m \"\$@\" && git push"
 
 # Undo operations
 macro add undo "git reset --soft HEAD~1"
-macro add unstage "git reset HEAD $@"
+macro add unstage "git reset HEAD \$@"
 
 # Branch management
 macro add branches "git branch -a"
 macro add cleanup "git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d"
 
 # Stash operations
-macro add stash "git stash save \"$@\""
+macro add stash "git stash save \"\$@\""
 macro add pop "git stash pop"
 ```
 
@@ -116,7 +116,7 @@ macro add pop "git stash pop"
 # Basic operations
 macro add up "docker-compose up -d"
 macro add down "docker-compose down"
-macro add restart "docker-compose restart $1"
+macro add restart "docker-compose restart \$1"
 
 # Logs
 macro add logs "docker-compose logs -f"
@@ -124,7 +124,7 @@ macro add logs:web "docker-compose logs -f web"
 macro add logs:api "docker-compose logs -f api"
 
 # Shell access
-macro add shell "docker-compose exec $1 /bin/bash"
+macro add shell "docker-compose exec \$1 /bin/bash"
 macro add sh:web "docker-compose exec web /bin/bash"
 
 # Rebuild
@@ -146,8 +146,8 @@ macro add clean:images "docker image prune -a -f"
 macro add clean:all "docker system prune -a -f --volumes"
 
 # Build and run
-macro add build "docker build -t $1 ."
-macro add run "docker run -it $@"
+macro add build "docker build -t \$1 ."
+macro add run "docker run -it \$@"
 ```
 
 ## Python Development
@@ -237,36 +237,36 @@ macro add build:mac "GOOS=darwin GOARCH=amd64 go build -o bin/app-mac"
 
 ```bash
 # Connection
-macro add psql "psql -U postgres -d $1"
+macro add psql "psql -U postgres -d \$1"
 macro add psql:local "psql -U postgres -d mydb -h localhost"
 
 # Backup and restore
-macro add backup "pg_dump -U postgres $1 > backup-\$(date +%Y%m%d-%H%M%S).sql"
-macro add restore "psql -U postgres $1 < $2"
+macro add backup "pg_dump -U postgres \$1 > backup-\$(date +%Y%m%d-%H%M%S).sql"
+macro add restore "psql -U postgres \$1 < \$2"
 
 # Common queries
-macro add tables "psql -U postgres -d $1 -c '\\dt'"
+macro add tables "psql -U postgres -d \$1 -c '\\dt'"
 ```
 
 ### MySQL
 
 ```bash
 # Connection
-macro add mysql "mysql -u root -p $1"
+macro add mysql "mysql -u root -p \$1"
 
 # Backup
-macro add mysqldump "mysqldump -u root -p $1 > backup-\$(date +%Y%m%d-%H%M%S).sql"
+macro add mysqldump "mysqldump -u root -p \$1 > backup-\$(date +%Y%m%d-%H%M%S).sql"
 ```
 
 ### MongoDB
 
 ```bash
 # Connection
-macro add mongo "mongosh $1"
+macro add mongo "mongosh \$1"
 
 # Backup
-macro add mongodump "mongodump --db=$1 --out=backup-\$(date +%Y%m%d-%H%M%S)"
-macro add mongorestore "mongorestore --db=$1 $2"
+macro add mongodump "mongodump --db=\$1 --out=backup-\$(date +%Y%m%d-%H%M%S)"
+macro add mongorestore "mongorestore --db=\$1 \$2"
 ```
 
 ## System Administration
@@ -280,8 +280,8 @@ macro add ssh:staging "ssh user@staging-server.com"
 
 # Process monitoring
 macro add ports "lsof -i -P -n | grep LISTEN"
-macro add procs "ps aux | grep $1"
-macro add kill:port "lsof -ti:$1 | xargs kill -9"
+macro add procs "ps aux | grep \$1"
+macro add kill:port "lsof -ti:\$1 | xargs kill -9"
 
 # System info
 macro add disk "df -h"
@@ -298,7 +298,7 @@ macro add logs:error "tail -f /var/log/nginx/error.log"
 macro add logs:app "tail -f /var/log/app/application.log"
 
 # Search logs
-macro add search:logs "grep -r \"$1\" /var/log/"
+macro add search:logs "grep -r \"\$1\" /var/log/"
 ```
 
 ## File Operations
@@ -319,18 +319,18 @@ macro add home "cd ~"
 
 ```bash
 # Find files
-macro add find "find . -name \"$1\""
-macro add findtext "grep -r \"$1\" ."
+macro add find "find . -name \"\$1\""
+macro add findtext "grep -r \"\$1\" ."
 
 # Compression
-macro add zip "zip -r $1.zip $1"
-macro add unzip "unzip $1"
-macro add targz "tar -czf $1.tar.gz $1"
-macro add untargz "tar -xzf $1"
+macro add zip "zip -r \$1.zip \$1"
+macro add unzip "unzip \$1"
+macro add targz "tar -czf \$1.tar.gz \$1"
+macro add untargz "tar -xzf \$1"
 
 # File operations
-macro add backup "cp $1 $1.backup-\$(date +%Y%m%d-%H%M%S)"
-macro add size "du -sh $1"
+macro add backup "cp \$1 \$1.backup-\$(date +%Y%m%d-%H%M%S)"
+macro add size "du -sh \$1"
 ```
 
 ## Advanced Patterns
@@ -380,7 +380,7 @@ macro add pod:install "cd ios && pod install && cd .."
 
 1. **Keep them simple**: One macro = one purpose
 2. **Use descriptive names**: `dev` is better than `d`
-3. **Add parameters for flexibility**: Use `$1`, `$2`, `$@`
+3. **Add parameters for flexibility**: Use `\$1`, `\$2`, `\$@`
 4. **Document complex macros**: Use `macro list` to see them
 5. **Group related macros**: Use prefixes like `test:`, `build:`, `docker:`
 6. **Export and share**: Share useful macros with your team
