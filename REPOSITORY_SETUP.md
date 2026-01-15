@@ -32,8 +32,8 @@ git add .
 # Make initial commit
 git commit -m "Initial commit: MacroFlow Documentation"
 
-# Add remote (replace '<user>' with your GitHub username)
-git remote add origin https://github.com/<user>/MacroFlowDocs.git
+# Add remote
+git remote add origin https://github.com/anishdpatel28/MacroFlowDocs.git
 
 # Push to GitHub
 git branch -M main
@@ -57,7 +57,7 @@ Contributions are welcome! To contribute:
 
 ## Related Repositories
 
-- [MacroFlowCLI](https://github.com/<user>/MacroFlowCLI) - CLI application
+- [MacroFlowCLI](https://github.com/anishdpatel28/MacroFlowCLI) - CLI application
 - MacroFlowGUI (Coming soon) - GUI application
 
 ## License
