@@ -11,9 +11,9 @@ echo ""
 
 # Check if docsify is available globally
 if command -v docsify &> /dev/null; then
-    docsify serve .
+    docsify serve . --livereload
 # If not, use npx (no install needed)
 else
     echo "Using npx to serve (no installation required)..."
-    npx docsify-cli serve .
+    npx docsify-cli serve . --livereload
 fi
