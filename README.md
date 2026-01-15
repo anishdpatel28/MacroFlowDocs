@@ -2,17 +2,17 @@
 
 Official documentation for MacroFlow - a powerful CLI tool for directory-scoped command aliases.
 
-## 📚 Documentation
+## Documentation
 
 - **[Getting Started](getting-started.md)** - Complete tutorial for new users
 - **[Examples](examples.md)** - 50+ real-world macro examples
 
-## 🔗 Related Repositories
+## Related Repositories
 
 - **[MacroFlowCLI](https://github.com/anish/MacroFlowCLI)** - The CLI application
 - **MacroFlowGUI** (Coming soon) - GUI application
 
-## 📖 What is MacroFlow?
+## What is MacroFlow?
 
 MacroFlow is a command-line tool that allows developers to create directory-scoped command aliases (macros). Unlike global aliases, MacroFlow macros:
 
@@ -21,7 +21,7 @@ MacroFlow is a command-line tool that allows developers to create directory-scop
 - Support parameters for dynamic behavior
 - Can be easily imported/exported and shared with team members
 
-## 🚀 Quick Example
+## Quick Example
 
 ```bash
 # Initialize a project
@@ -37,7 +37,7 @@ macro add deploy "npm run build && firebase deploy"
 macro dev
 ```
 
-## 📝 Contributing
+## Contributing
 
 Found a typo or want to add more examples? Contributions are welcome!
 
@@ -45,11 +45,11 @@ Found a typo or want to add more examples? Contributions are welcome!
 2. Make your changes
 3. Submit a pull request
 
-## 📄 License
+## License
 
 MIT License - See LICENSE file in the MacroFlowCLI repository.
 
-## 🔗 Links
+## Links
 
 - **CLI Repository**: [MacroFlowCLI](https://github.com/anish/MacroFlowCLI)
 - **Documentation**: You're here!
