@@ -72,11 +72,52 @@ macro hello
 
 Output:
 ```
-Executing: echo 'Hello, MacroFlow!'
+% echo 'Hello, MacroFlow!'
 Hello, MacroFlow!
 ```
 
 Congratulations! You've created and run your first macro! 🎉
+
+## Working with Parameters
+
+MacroFlow supports parameters in your commands using `$1`, `$2`, or `$@` (all arguments).
+
+**Important: Use single quotes when creating macros with parameters!**
+
+```bash
+# ✅ Correct - single quotes preserve $1
+macro add goto 'cd $1 && pwd'
+macro add search 'grep -r "$1" .'
+macro add commit 'git commit -m "$@"'
+
+# ❌ Wrong - double quotes cause shell expansion
+macro add goto "cd $1"    # Your shell expands $1 before macro sees it!
+```
+
+**Why single quotes?** When you use double quotes, your shell expands variables like `$1` _before_ the macro command receives them. Single quotes preserve the literal `$1` so MacroFlow can handle it.
+
+**Alternative:** Escape the `$` in double quotes:
+```bash
+macro add goto "cd \$1 && pwd"  # Works, but single quotes are easier
+```
+
+### Parameter Examples
+
+```bash
+# Single parameter
+macro add goto 'cd $1 && pwd'
+macro goto /tmp              # Executes: cd /tmp && pwd
+
+# Multiple parameters  
+macro add copy 'cp $1 $2'
+macro copy file.txt backup.txt
+
+# All parameters ($@)
+macro add commit 'git add . && git commit -m "$@"'
+macro commit Fixed bug in login  # Executes with all words
+```
+
+**Note:** `cd` commands won't change your terminal's directory (they run in a subprocess). Use them as part of command chains like `cd $1 && npm install`.
 
 ## Real-World Examples
 
@@ -86,14 +127,14 @@ Congratulations! You've created and run your first macro! 🎉
 cd ~/projects/my-website
 macro init "My Website"
 
-# Development macros
+# Development macros (no parameters - double quotes OK)
 macro add dev "npm run dev"
 macro add build "npm run build"
 macro add test "npm test"
 macro add lint "eslint . --fix"
 
-# Git shortcuts
-macro add save "git add . && git commit -m \"$@\" && git push"
+# Git shortcuts (with parameters - use single quotes!)
+macro add save 'git add . && git commit -m "$@" && git push'
 macro add sync "git pull && npm install"
 
 # Use them
