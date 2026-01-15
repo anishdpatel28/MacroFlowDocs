@@ -2,7 +2,7 @@
 
 Several ways to view MacroFlow documentation on localhost.
 
-## 🚀 Quickest Method (Recommended)
+## Quickest Method (Recommended)
 
 ```bash
 cd MacroFlowDocs
@@ -118,7 +118,7 @@ Add to `index.html`:
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
 ```
 
-## 🌐 Deploy to GitHub Pages
+## Deploy to GitHub Pages
 
 Your docs are already configured for GitHub Pages!
 
@@ -149,7 +149,7 @@ brew install node
 chmod +x serve.sh
 ```
 
-## 📚 Documentation Tips
+## Documentation Tips
 
 - Edit markdown files and refresh browser to see changes
 - No build step required
@@ -158,4 +158,4 @@ chmod +x serve.sh
 
 ---
 
-**Quick Start**: Run `./serve.sh` and open http://localhost:3000 🚀
+**Quick Start**: Run `./serve.sh` and open http://localhost:3000
