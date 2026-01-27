@@ -112,8 +112,6 @@ macro add commit "git add . && git commit -m \"\$@\""
 macro commit Fixed bug in login
 ```
 
-**Note:** `cd` commands won't change your terminal's directory (they run in a subprocess). Use them as part of command chains like `cd \$1 && npm install`.
-
 ## Real-World Examples
 
 ### Web Development Project
@@ -209,45 +207,6 @@ Each project has its own independent macros.
 ```
 
 The `backend` directory has its own project, so it (and its subdirectories) use Project B macros instead of Project A.
-
-## Parameter Support
-
-Macros can accept parameters for dynamic behavior.
-
-### Positional Parameters
-
-Use `$1`, `$2`, etc. for individual parameters:
-
-```bash
-macro add goto "cd $1"
-macro add copy "cp $1 $2"
-
-# Usage
-macro goto src/components
-macro copy file.txt backup.txt
-```
-
-### All Parameters
-
-Use `$@` to capture all parameters:
-
-```bash
-macro add commit "git commit -m \"$@\""
-
-# Usage
-macro commit This is my commit message
-# Runs: git commit -m "This is my commit message"
-```
-
-### Combining Parameters
-
-```bash
-macro add deploy "git add . && git commit -m \"$1\" && git push $2"
-
-# Usage
-macro deploy "Deploy v2.0" origin
-# Runs: git add . && git commit -m "Deploy v2.0" && git push origin
-```
 
 ## Managing Multiple Projects
 

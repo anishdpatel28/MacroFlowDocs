@@ -10,7 +10,7 @@ Official documentation for MacroFlow - a powerful CLI tool for directory-scoped 
 ## Related Repositories
 
 - **[MacroFlowCLI](https://github.com/anishdpatel28/MacroFlowCLI)** - The CLI application
-- **MacroFlowGUI** (Coming soon) - GUI application
+- **MacroFlowGUI** - GUI application
 
 ## What is MacroFlow?
 
